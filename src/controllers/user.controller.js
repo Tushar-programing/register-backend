@@ -87,7 +87,7 @@ const updateAvatar = asyncHandler(async(req, res) => {
     const thumbnail = req.file?.path
     const {user} = req.params
     const {location} = req.body
-    // console.log(thumbnail, location, user)
+    console.log(thumbnail, location, user)
     //TODO: update tweet
     // const {updateTweet} = req.body
     // const {tweetId} = req.params
@@ -123,8 +123,8 @@ const updateAvatar = asyncHandler(async(req, res) => {
 })
 
 const updatePurpose = asyncHandler(async(req, res) => {
-    const {purpose} = req.body;
-    const {user} = req.params
+    // const {purpose} = req.body;
+    const {user, purpose} = req.params
 
     console.log(purpose, user);
 
@@ -133,7 +133,7 @@ const updatePurpose = asyncHandler(async(req, res) => {
     // const {tweetId} = req.params
 
     if (!purpose || !user ) {
-        throw new ApiError(200, "tweet and tweetid is required")
+        throw new ApiError(400, "tweet and tweetid is required")
     }
     console.log("text 1");
 
