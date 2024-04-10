@@ -7,8 +7,8 @@ const router = Router()
 
 router.route("/register").post(registerUser);
 // router.route("/edit-video/:videoId").get(verifyJWT, upload.single("thumbnail"), updateVideo)
-router.route("/avatar/:user").get(upload.single("thumbnail"), updateAvatar)
+router.route("/avatar/:user").post(upload.single("thumbnail"), updateAvatar)
 
-router.route("/purpose/:user").get(updatePurpose)
+router.route("/purpose/:user/:purpose").post(updatePurpose)
 
 export default router;
